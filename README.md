@@ -1,3 +1,12 @@
+Running notes:
+
+* don't use mpi, downloaded rosetta.binary.linux.release-315 works without mpi but still parallel
+* run with `rosetta_ddg_run -p File.pdb -cr ./RosettaDDGPrediction/config_run/cartddg2020_ref2015.yaml -cs ./RosettaDDGPrediction/config_settings/nompi.yaml -r /mnt/i/rosetta/rosetta.binary.linux.release-315 -n 12 -l 
+mutations.txt`
+* 
+
+
+
 Cancer Structural Biology, Danish Cancer Society Research Center, 2100, Copenhagen, Denmark
 
 Cancer Systems Biology, Health and Technology Department, Section for Bioinformatics, 2800, Lyngby, Denmark
