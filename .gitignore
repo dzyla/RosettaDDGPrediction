@@ -1,3 +1,7 @@
 # OS-generated files
 .DS_Store
 .DS_Store?
+build/
+*.egg-info/
+ddg_env/
+install.sh

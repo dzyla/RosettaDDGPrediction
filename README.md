@@ -47,15 +47,32 @@ The user must have Python v3.7 or higher installed, together with the Rosetta mo
 
 Required Python dependencies, if not already present, will be installed along with RosettaDDGPrediction.
 
-## Installation
+## Modern Installation (2026 Recommended)
 
-1. (Optional) We recommend installing this package inside a virtual environment. Please see [here](https://docs.python.org/3/tutorial/venv.html) how to create a Python virtual environment. Upon successful creation, activate the virtual environment before moving to the second step.
+This software runs best in an isolated environment. We recommend using `uv` (by Astral) to install it safely without disrupting your system Python.
 
-2. To install the package, download and unzip this folder, enter the folder and run the following command:
+1. Install uv: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+2. Create and activate an environment:
+   ```bash
+   uv venv ddg_env
+   source ddg_env/bin/activate
+   ```
 
-   `python3.7 setup.py install`
+3. Install the tool:
+```bash
+uv pip install .
+```
 
-Upon successful installation, you should have three executable (`rosetta_ddg_run`, `rosetta_ddg_aggregate` and `rosetta_ddg_plot`) available to perform the various steps of data collection and analysis.
+## Running via Docker (Easiest Method)
+
+To avoid configuring Dask, Pandas, and Python locally entirely, you can run the tool via Docker. Mount your local directory and your Rosetta directory into the container:
+
+```bash
+docker run -v /path/to/local/rosetta:/rosetta \
+           -v $(pwd):/data \
+           rosetta-ddg:latest \
+           rosetta_ddg_run -p /data/File.pdb -r /rosetta ...
+```
 
 ## Usage
 
